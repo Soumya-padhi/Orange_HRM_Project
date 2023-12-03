@@ -1,5 +1,7 @@
 package pageElements;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,39 +19,38 @@ public class CandidatePage {
 		}
 		
 		
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div/div[2]/i")WebElement JobTitleDropDown;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]")WebElement JobTitleDropDown;
 	
  @FindBy(xpath="//*[text()='Account Assistant']")WebElement JobTitle_Val1;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div/div[2]/i")WebElement Vacancy;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]")WebElement Vacancy;
  
  @FindBy(xpath="//*[text()='Associate IT Manager'][1]") WebElement Vacancy_Val1;
  
- @FindBy(xpath="/*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div/div[2]/i") WebElement HiringManager;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[3]") WebElement HiringManager;
  
  @FindBy(xpath="//*[text()='Odis Adalwin']") WebElement HiringManger_Val1;
  
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[4]/div/div[2]/div/div/div[2]/i") WebElement Status;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[4]") WebElement Status;
  
  @FindBy(xpath="//*[text()='Application Initiated'][1]") WebElement Status_Val1;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[1]/div/div[2]/div/div/input") WebElement CandidateName;
+ @FindBy(xpath="//input[@placeholder='Type for hints...']") WebElement CandidateName;
 
  @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[1]/div/div[2]/div/div") WebElement Candidate_Val1;
  
-// @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[3]/div/div[2]/div/div/i") WebElement DatePicker_From;
+ @FindBy(xpath="//input[@placeholder='From']") WebElement From_Value1;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[3]/div/div[2]/div/div/i") WebElement From_Value1;
+ @FindBy(xpath="//input[@placeholder='To']") WebElement To_Value1;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[4]/div/div[2]/div/div/input") WebElement To_Value1;
- 
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[3]/div/div/div/div[2]/div/div/div[2]/i") WebElement Method_Of_App;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[5]") WebElement Method_Of_App;
  
  @FindBy(xpath="//*[text()='Manual']" ) WebElement Method_V1;
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[4]/button[2]") WebElement Searchbutton;
+ @FindBy(xpath="//button[@type='submit']") WebElement Searchbutton;
  
- public VacanciesPage Candidate() {
+ public VacanciesPage candidate() {
+	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 	 JobTitleDropDown.click();
 	 JobTitle_Val1.click();
  

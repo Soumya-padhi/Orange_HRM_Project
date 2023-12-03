@@ -26,11 +26,23 @@ public class RecruitmentFlow extends BaseTest{
 		
 		String username = xs.Get_Username(1, 0).toString();
 		String password = xs.Get_password(1, 1).toString();
+		
 		Rp=lp.enterlogindetails(username,password);
+	}
+	@Test(dependsOnMethods={"Recruitmentflow"})
+	public void Recruitment_Module() {
 		Cp=Rp.clickOnRecruitment();
-		 VC = Cp.Candidate();
-		 CB=VC.Vacancies();
-		 CB.BrowserExit();
+	}
+	
+	@Test(dependsOnMethods={"Recruitmentflow","Recruitment_Module"})
+	    public void Candidate_tab() {
+		 VC = Cp.candidate();
+	}
+	
+	@Test(dependsOnMethods={"Recruitmentflow","Recruitment_Module","Candidate_tab"})
+	   public void Vacancies_tab() {
+		 CB=VC.vacancies();
+		 CB.browserExit();
 		 
 
 }

@@ -14,7 +14,7 @@ public class CloseBrowser {
 			
 		}
 		
-		public void BrowserExit() {
+		public void browserExit() {
 			driver.quit();
 		}
 		

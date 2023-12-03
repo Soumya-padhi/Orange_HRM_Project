@@ -1,5 +1,7 @@
 package pageElements;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,24 +18,26 @@ public class VacanciesPage {
 				
 			}
 			
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/div/div/div[2]/i") WebElement JobTitle_V;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]") WebElement JobTitle_V;
 
  @FindBy(xpath="//*[text()='CEO']")WebElement JobTitle_V1;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div/div[2]/i") WebElement VacancyDrop;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]") WebElement VacancyDrop;
  
  @FindBy(xpath="//*[text()='Senior QA Lead'][1]") WebElement Vacancy_V1;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div/div[2]/i") WebElement Hiring_M;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[3]") WebElement Hiring_M;
  
  @FindBy(xpath="//*[text()='Paul Collings'][1]") WebElement Hiring_M1;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[4]/div/div[2]/div/div/div[2]/i") WebElement Status_C;
+ @FindBy(xpath="(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[4]") WebElement Status_C;
  
  @FindBy(xpath="//*[text()='Active'][1]") WebElement Status_V;
  
- @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]") WebElement Search_V;
- public CloseBrowser Vacancies(){
+ @FindBy(xpath="//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']") WebElement Search_V;
+ 
+ public CloseBrowser vacancies(){
+	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 	 JobTitle_V.click(); 
 	 JobTitle_V1.click();
 	 VacancyDrop.click();
